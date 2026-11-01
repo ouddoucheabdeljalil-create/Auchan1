@@ -2,55 +2,55 @@
   {
     "id": 1,
     "name": "Atay Sultan",
-    "prix": 25,
+    "prix": 17,
     "categorie": "Boissons",
     "img": "./assest/atay soltan.png"
   },
   {
     "id": 2,
     "name": "Calin 4",
-    "prix": 45,
+    "prix": 38,
     "categorie": "Bébé",
     "img": "./assest/calin 4.png"
   },
   {
     "id": 3,
     "name": "Calin 5",
-    "prix": 48,
+    "prix": 38,
     "categorie": "Bébé",
     "img": "./assest/calin 5.png"
   },
   {
     "id": 4,
     "name": "Dalaa 5",
-    "prix": 45,
+    "prix": 60,
     "categorie": "Bébé",
     "img": "./assest/dalaa 5.png"
   },
   {
     "id": 5,
     "name": "Dari Couscous",
-    "prix": 12,
+    "prix": 15,
     "categorie": "Alimentation",
     "img": "./assest/dari.png"
   },
   {
     "id": 6,
     "name": "Fors 5kg",
-    "prix": 55,
+    "prix": 25,
     "categorie": "Alimentation",
     "img": "./assest/fors 5kg.png"
   },
   {
     "id": 7,
-    "name": "I9an 3adi",
-    "prix": 18,
+    "name": "Al itkan ",
+    "prix": 16,
     "categorie": "Alimentation",
     "img": "./assest/it9an 3adi.png"
   },
   {
     "id": 8,
-    "name": "I9an Compli",
+    "name": "Al itkan Compli",
     "prix": 20,
     "categorie": "Alimentation",
     "img": "./assest/it9an kompli.png"
@@ -58,37 +58,37 @@
   {
     "id": 9,
     "name": "La Vache qui rit 16",
-    "prix": 25,
+    "prix": 22,
     "categorie": "Produits laitiers",
     "img": "./assest/la vach qui rit 16.png"
   },
   {
     "id": 10,
-    "name": "Lanjit",
-    "prix": 30,
+    "name": "Langette",
+    "prix": 12,
     "categorie": "Bébé",
-    "img": "./assest/lanjit.png"
+    "img": "./assest/lanjit .png"
   },
   {
     "id": 11,
-    "name": "Ibn Jbal",
-    "prix": 10,
+    "name": "Lben Jbal",
+    "prix": 5,
     "categorie": "Produits laitiers",
-    "img": "./assest/Ibn jbal.png"
+    "img": "./assest/lbn jibal.png"
   },
   {
     "id": 12,
-    "name": "Ibn Salim",
-    "prix": 8,
+    "name": "lben Salim",
+    "prix": 5,
     "categorie": "Produits laitiers",
-    "img": "./assest/Ibn salim.png"
+    "img": "./assest/lbn salim.png"
   },
   {
     "id": 13,
-    "name": "Jif Savon",
-    "prix": 15,
+    "name": "El kef Savon",
+    "prix": 5,
     "categorie": "Entretien",
-    "img": "./assest/Jif sabon.png"
+    "img": "./assest/lkf sabon.png"
   },
   {
     "id": 14,
@@ -107,97 +107,97 @@
   {
     "id": 16,
     "name": "Molfix 3",
-    "prix": 45,
+    "prix": 48,
     "categorie": "Bébé",
     "img": "./assest/molfix 3.png"
   },
   {
     "id": 17,
     "name": "Molfix 5",
-    "prix": 50,
+    "prix": 48,
     "categorie": "Bébé",
     "img": "./assest/molfix 5.png"
   },
   {
     "id": 18,
     "name": "Oud Sous 0.5L",
-    "prix": 7,
+    "prix": 23,
     "categorie": "Boissons",
     "img": "./assest/oud sous 0.5L.png"
   },
   {
     "id": 19,
     "name": "Oud Sous 1L",
-    "prix": 12,
+    "prix": 45,
     "categorie": "Boissons",
     "img": "./assest/oud sous 1L.png"
   },
   {
     "id": 20,
     "name": "Oud Sous 5L",
-    "prix": 45,
+    "prix": 225,
     "categorie": "Boissons",
     "img": "./assest/oud sous 5L.png"
   },
   {
     "id": 21,
-    "name": "Pirli",
-    "prix": 4,
+    "name": "Perly",
+    "prix": 2.5,
     "categorie": "Produits laitiers",
     "img": "./assest/pirli.png"
   },
   {
     "id": 22,
     "name": "Raibi Jamila",
-    "prix": 4,
+    "prix": 2.5,
     "categorie": "Produits laitiers",
     "img": "./assest/raibi jamila.png"
   },
   {
     "id": 23,
-    "name": "Raybi Jibal",
-    "prix": 4,
+    "name": "Raibi Jibal",
+    "prix": 2.5,
     "categorie": "Produits laitiers",
     "img": "./assest/raybi jibal.png"
   },
   {
     "id": 24,
-    "name": "Skar 9hwa",
-    "prix": 15,
+    "name": "sucre cafe",
+    "prix": 7,
     "categorie": "Alimentation",
     "img": "./assest/skar 9hwa.png"
   },
   {
     "id": 25,
-    "name": "Skar Atay",
-    "prix": 12,
+    "name": "sucre tea",
+    "prix": 6.5,
     "categorie": "Alimentation",
     "img": "./assest/skar atay.png"
   },
   {
     "id": 26,
-    "name": "Taous Likid",
-    "prix": 20,
+    "name": "Taous lequide",
+    "prix": 18,
     "categorie": "Hygiène",
     "img": "./assest/taous likid.png"
   },
   {
     "id": 27,
     "name": "Taous Savon",
-    "prix": 8,
+    "prix": 6,
     "categorie": "Hygiène",
     "img": "./assest/taous sabon.png"
   },
   {
     "id": 28,
-    "name": "Tide 18",
-    "prix": 25,
+    "name": "Tide 90g",
+    "prix": 3,
     "categorie": "Entretien",
     "img": "./assest/tide 18.png"
   },
   {
     "id": 29,
-    "name": "Tide Kilo",
+    "name": "Tide 1kg",
     "prix": 18,
     "categorie": "Entretien",
     "img": "./assest/tide kilo.png"
@@ -205,7 +205,7 @@
   {
     "id": 30,
     "name": "Trident",
-    "prix": 5,
+    "prix": 4,
     "categorie": "Confiserie",
     "img": "./assest/trident.png"
   }
