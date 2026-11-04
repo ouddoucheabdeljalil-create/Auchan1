@@ -1,12 +1,27 @@
 
 import { data } from "./storage.js";
+const pageNumber = document.getElementById('select')
+let itemsPerPage = 8;
 
-const itemsPerPage = 8;
+
 let correntPage = 1;
 let currentFilter = "";
 export const produitE1 = document.querySelector('#catalogue');
 export const pagenation = document.getElementById('pagenation');
-
+pageNumber.addEventListener('click', (e) => {
+    itemsPerPage = Number(pageNumber.value)
+    console.log(itemsPerPage)
+    if (itemsPerPage === 8) {
+        produitE1.className = 'grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-4 '
+    }
+    else if (itemsPerPage === 6) {
+        produitE1.className = 'grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-3 '
+    }
+    else {
+        produitE1.className = 'grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-2 '
+    }
+    render(itemsPerPage)
+})
 const filter = document.getElementById('search');
 
 filter.addEventListener('input', e => {
@@ -28,7 +43,7 @@ export function render() {
 
         const articles = document.createElement('article');
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center '
-       
+
         articles.innerHTML = ` 
                     <img src="${p.img}" alt=""
                         class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
