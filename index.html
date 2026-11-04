@@ -14,184 +14,65 @@
 
 </head>
 
-<body>
+<body class="h-screen  bg-amber-600 font-inter text-2xl ">
     <header class="sticky top-0 flex flex-row  bg-[#F8FAFC] border border-[#E2E8F0] ">
-            <a href="index.html"><img src="assest/Logo Dodrar Market avec panier stylisé.png" alt="" class="h-18 w-auto"></a>
-            <a href="panier.html" class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img src="assest/panier.png" alt=""><a>
-        </header>
-    <main class="bg-red-500  w-screen h-full font-inter">
-        
-        <aside>
+        <a href="index.html"><img src="assest/Logo Dodrar Market avec panier stylisé.png" alt=""
+                class="h-18 w-auto"></a>
+        <a href="contact.html"
+            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-45  my-1 justify-center absolute right-0 "><img
+                src="assest/contact_support_.svg" alt=""></a>
+        <a href="admin.html"
+            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
+                src="assest/user.svg" alt=""></a>
+        <button id="panier-btn" href="panier.html"
+            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img
+                src="assest/panier.png" alt=""><button>
+    </header>
+    <main class="sm: grid-cols-1  gap-2  w-full h-full font-inter lg:grid-cols-6 grid-rows-4">
+
+        <!-- <aside class="sm:  bg-amber-50 md:row-start-1  lg:col-start-1 row-span-4 ">
+            <h2>dfghjklm</h2>
+        </aside> -->
+        <aside id="panier-espace" class="sm:fixed overflow-scroll w-full h-screen  hidden  bg-amber-50  ">
+
+            <ul id="panier" class="ml-25 flex flex-col gap-3">
+
+            </ul>
 
         </aside>
-        <section class=" ">
-
-            <input id="search" type="search"
-                class=" border border-[#E2E8F0] bg-[#ffffff] rounded-xl h-9 col-span-2 pl-5"
-                placeholder="  Recherche un prouduit">
-            <div id="prouduit" class="grid gap-5 p-5 md:grid-cols-2 lg:grid-cols-4">
-                <!-- <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center">
-                    <img src="" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[65%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-2 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-2 row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-3 col-span-3 row-start-4 w-[50%] relative left-5 my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/raibi jamila.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div>
-                <div class="grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center ">
-                    <img src="./assest/atay soltan.png" alt=""
-                        class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
-                        <p class="bg-red-400 col-start-4 col-span-2 rounded-4xl text-center h-4 w-[70%] ml-7 text-[0.7rem] mt-3 pb-4 ">Produits laitiers</p>
-                    <h2 class="row-start-2 col-start-3 col-span-3 text-center">jaouda lait</h2>
-                    
-
-                        <p class="col-start-3 col-span-3  row-start-3 text-center">4.5 DH</p>
-                        <button class="bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]" ><img src="assest/panier.png"
-                                alt="" class="h-10 w-auto "> </button>
-                    
-
-                </div> -->
+        <section class="h-full lg:col-span-5 row-start-1 row-span-5 ">
+            <div class="flex ">
+                <select name="" id="" class="bg-amber-300">
+                    <option value="Bébé">Bébé</option>
+                    <option value="Boissons">Boissons</option>
+                    <option value="Produits laitiers">Produits laitiers</option>
+                    <option value="Alimentation">Alimentation</option>
+                    <option value="Confiserie">Confiserie</option>
+                    <option value="Entretien">Entretien</option>
+                    <option value="Hygiène">Hygiène</option>
+                </select>
+                <select id="select" name="" id="">
+                    <option value="8">8</option>
+                    <option value="6">6</option>
+                    <option value="4">4</option>
+                </select>
+                <button id="grid-btn" class=""><img src="assest/layout-grid-line.svg" alt="" class="h-15"></button>
+                <button id="btn-horizontal"><img src="assest/layout-horizontal-line.svg" alt="" class="h-15"></button>
+                <input id="search" type="search"
+                    class=" border border-[#E2E8F0] bg-[#ffffff] rounded-xl h-9 col-span-2 pl-8 mt-3 w-[100%] "
+                    placeholder="  Recherche un prouduit">
+            </div>
+            <div id="catalogue" class="grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-4 ">
 
             </div>
-            <div id="pagenation" class="flex justify-center"></div>
+            <div id="pagenation" class="flex justify-center mt-20 "></div>
         </section>
 
+
     </main>
+
+
+
     <!-- <footer>
         <h2>Nous suivre</h2>
         <div>
@@ -202,5 +83,7 @@
         </div>
     </footer> -->
 </body>
-    <script type="module" src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
+
+
 </html>

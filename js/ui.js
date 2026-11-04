@@ -1,45 +1,9 @@
 
-import { data } from "./storage.js";
-const pageNumber = document.getElementById('select')
-let itemsPerPage = 8;
+// import { produitE1 } from "./products";
 
 
-let correntPage = 1;
-let currentFilter = "";
-export const produitE1 = document.querySelector('#catalogue');
-export const pagenation = document.getElementById('pagenation');
-pageNumber.addEventListener('click', (e) => {
-    itemsPerPage = Number(pageNumber.value)
-    console.log(itemsPerPage)
-    if (itemsPerPage === 8) {
-        produitE1.className = 'grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-4 '
-    }
-    else if (itemsPerPage === 6) {
-        produitE1.className = 'grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-3 '
-    }
-    else {
-        produitE1.className = 'grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-2 '
-    }
-    render(itemsPerPage)
-})
-const filter = document.getElementById('search');
-
-filter.addEventListener('input', e => {
-    currentFilter = e.target.value.toLowerCase();
-    correntPage = 1;
-    render();
-});
-
-export function render() {
-
-    const filtered = data.filter(p => p.name.toLowerCase().includes(currentFilter));
-    const start = (correntPage - 1) * itemsPerPage;
-    const pageItems = filtered.slice(start, start + itemsPerPage);
-    console.log(pageItems)
-
-
-    produitE1.innerHTML = ''
-    for (let p of pageItems) {
+export function afficherProduits(pageItems , produitE1){
+     for (let p of pageItems) {
 
         const articles = document.createElement('article');
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center '
@@ -65,30 +29,7 @@ export function render() {
 
         produitE1.appendChild(articles)
     }
-
-    pagenation.innerHTML = '';
-    const pages = Math.ceil(data.length / itemsPerPage);
-    for (let i = 1; i <= pages; i++) {
-        const btn = document.createElement('button');
-        btn.classList = (' mt-0 border rounded-xl   h-auto w-15 bg-')
-        btn.textContent = i;
-        if (i === correntPage) {
-            btn.disabled = true;
-            btn.classList.add('bg-[#4338CA]')
-        }
-        btn.addEventListener('click', () => { correntPage = i; render(); });
-        pagenation.appendChild(btn);
-        //            pagenation.addEventListener('click', (e) =>{
-        //     if(e.target.tagName === 'BUTTON'){
-        //         if (i === correntPage){
-        //         btn.classList.add('bg-yellow-500') 
-        //         console.log('hhhhhhhh')}
-        //     }
-        // })
-    }
-
 }
-
 
 export function layoutGrid(articles) {
     const gridBtn = document.getElementById('grid-btn')
@@ -103,4 +44,8 @@ export function layoutGrid(articles) {
         articles.classList.remove()
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center lg:col-span-4'
     })
+}
+
+function filterProduits(){
+    
 }
