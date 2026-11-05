@@ -1,8 +1,31 @@
 // import { createElement } from "react"
-import { data } from "./storage.js"
-import { produitE1 } from "./products.js"
+import { data , datapanier} from "./storage.js"
+
 // import createPlugin from "tailwindcss/plugin"
-const panierBtn = document.getElementById("panier-btn")
-const panierSpace = document.getElementById('panier-espace')
-const tasalit = document.getElementById('panier')
+
+const panier = document.getElementById('panier')
+export const produitE1 = document.querySelector('#catalogue');
+
+export function test(){
+   const panierPoduits = JSON.parse(localStorage.getItem('panierPoduits')) || [] 
+produitE1.addEventListener('click' , (e) => {
+    
+    if(e.target.classList.contains('ajouter-btn')){
+        for(let p of data){
+            console.log()
+            if(p.id === Number(e.target.dataset.id)){
+                panierPoduits.push(p)
+            }
+        }
+    }
+    
+localStorage.setItem('panierPoduits' , JSON.stringify(panierPoduits))
+
+})
+}
+export function gereePanier(){
+    console.log(datapanier)
+}
+
+
 

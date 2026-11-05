@@ -4,5 +4,4 @@ export function SetProduits(produits){
 }
 export const data = JSON.parse(localStorage.getItem('produits')) || []
 
-// export function setDataPanier(panierInfo){
-// localStorage.setItem('panierInfo' , JSON.stringify(panierInfo))}
+export const datapanier = JSON.parse(localStorage.getItem('panierPoduits')) || []
