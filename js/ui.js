@@ -1,34 +1,13 @@
 
-import { data } from "./storage.js";
-
-const itemsPerPage = 8;
-let correntPage = 1;
-let currentFilter = "";
-export const produitE1 = document.querySelector('#catalogue');
-export const pagenation = document.getElementById('pagenation');
-
-const filter = document.getElementById('search');
-
-filter.addEventListener('input', e => {
-    currentFilter = e.target.value.toLowerCase();
-    correntPage = 1;
-    render();
-});
-
-export function render() {
-
-    const filtered = data.filter(p => p.name.toLowerCase().includes(currentFilter));
-    const start = (correntPage - 1) * itemsPerPage;
-    const pageItems = filtered.slice(start, start + itemsPerPage);
-    console.log(pageItems)
+// import { produitE1 } from "./products";
 
 
-    produitE1.innerHTML = ''
-    for (let p of pageItems) {
+export function afficherProduits(pageItems , produitE1){
+     for (let p of pageItems) {
 
         const articles = document.createElement('article');
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center '
-       
+
         articles.innerHTML = ` 
                     <img src="${p.img}" alt=""
                         class="h-45 -w-auto ml-5 col-start-1 col-end-3 row-start-1 row-end-4 ">
@@ -50,30 +29,7 @@ export function render() {
 
         produitE1.appendChild(articles)
     }
-
-    pagenation.innerHTML = '';
-    const pages = Math.ceil(data.length / itemsPerPage);
-    for (let i = 1; i <= pages; i++) {
-        const btn = document.createElement('button');
-        btn.classList = (' mt-0 border rounded-xl   h-auto w-15 bg-')
-        btn.textContent = i;
-        if (i === correntPage) {
-            btn.disabled = true;
-            btn.classList.add('bg-[#4338CA]')
-        }
-        btn.addEventListener('click', () => { correntPage = i; render(); });
-        pagenation.appendChild(btn);
-        //            pagenation.addEventListener('click', (e) =>{
-        //     if(e.target.tagName === 'BUTTON'){
-        //         if (i === correntPage){
-        //         btn.classList.add('bg-yellow-500') 
-        //         console.log('hhhhhhhh')}
-        //     }
-        // })
-    }
-
 }
-
 
 export function layoutGrid(articles) {
     const gridBtn = document.getElementById('grid-btn')
@@ -88,4 +44,8 @@ export function layoutGrid(articles) {
         articles.classList.remove()
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center lg:col-span-4'
     })
+}
+
+function filterProduits(){
+    
 }
