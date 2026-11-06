@@ -1,14 +1,17 @@
 import { data } from "./storage.js";
 import { afficherProduits } from "./ui.js";
+const pageNumber = document.getElementById('itmes-per-page')
+const produitE1 = document.querySelector('#catalogue');
+const pagenation = document.getElementById('pagenation');
+const search = document.getElementById('search');
+const categorieSelect = document.getElementById('catalogue-select')
 
-const pageNumber = document.getElementById('select')
 let itemsPerPage = 8;
-
-
 let correntPage = 1;
 let currentFilter = "";
-export const produitE1 = document.querySelector('#catalogue');
-export const pagenation = document.getElementById('pagenation');
+
+// number de produitd dans la page 
+
 pageNumber.addEventListener('click', (e) => {
     itemsPerPage = Number(pageNumber.value)
     console.log(itemsPerPage)
@@ -23,13 +26,19 @@ pageNumber.addEventListener('click', (e) => {
     }
     render(itemsPerPage)
 })
-const search = document.getElementById('search');
+
+categorieSelect.addEventListener('click' , (e) =>{
+    
+})
+
+
 
 search.addEventListener('input', e => {
     currentFilter = e.target.value.toLowerCase();
 
     render();
 });
+
 
 export function render() {
 
@@ -42,7 +51,7 @@ export function render() {
     produitE1.innerHTML = ''
    afficherProduits(pageItems , produitE1)
 
-    pagenation.innerHTML = '';
+   pagenation.innerHTML = '';
     const pages = Math.ceil(data.length / itemsPerPage);
     for (let i = 1; i <= pages; i++) {
         const btn = document.createElement('button');
@@ -57,4 +66,5 @@ export function render() {
        
     }
    
+    
 }

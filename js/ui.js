@@ -1,9 +1,8 @@
 
-// import { produitE1 } from "./products";
 
 
-export function afficherProduits(pageItems , produitE1){
-     for (let p of pageItems) {
+export function afficherProduits(pageItems, produitE1) {
+    for (let p of pageItems) {
 
         const articles = document.createElement('article');
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center '
@@ -46,6 +45,62 @@ export function layoutGrid(articles) {
     })
 }
 
-function filterProduits(){
-    
+export function afficherPanier(id) {
+    const datapro = JSON.parse(localStorage.getItem('panierPoduits')) || []
+
+    let produit = datapro.find(p => p.id === Number(id))
+    let item = panier.querySelector(`li[data-id='${id}']`);
+    if(!item){
+        item = document.createElement('li')
+        item.dataset.id = id
+        item.className = "flex justify-around bg-[#ffffff] items-center text-blue-900 border border-amber-300 m-5"
+        item.innerHTML =` <img src="${produit.img}" alt="" class="h-40">
+                <button data-id="${produit.id}" class="min border border-blue-900 h-10 w-10">-</button>
+                <p class="qntit${produit.id}">1</p>
+                <button data-id="${produit.id}" id="plus${produit.id}" class="plus border border-blue-900 h-10 w-10">+</button>
+                <p><span class="total${produit.id}">${produit.prix} </span>DH</p>
+                <button >supremer</button>`
+        panier.appendChild(item)
+
+    }
+    else{
+        let quantity = item.querySelector(`.qntit${produit.id}`)
+       
+        quantity.textContent = Number(quantity.textContent) + 1
+        let total = item.querySelector(`.total${produit.id}`)
+        total.textContent = Number(quantity.textContent)  * produit.prix
+        
+
+    }
+    panierplusMoins()
+   
+} 
+export function panierplusMoins(panierPoduits){
+const item = panier.querySelector('li')
+item.addEventListener('click' , (e) => {
+        let id = e.target.dataset.id;
+        console.log('nnn' , e.target.dataset.id)
+        let r = panier.querySelector('.plus');
+        console.log(e.target.id)
+    // if(e.target.id == `plus${e.target.dataset.id}` ){
+   
+     let quantity = item.querySelector(`.qntit${e.target.dataset.id}`)
+     
+   
+     quantity.textContent = Number(quantity.textContent) +1
+     console.log(quantity)
+     let total = item.querySelector(`.total${produit.id}`)
+        total.textContent = Number(quantity.textContent)  * produit.prix
+    // }
+    })
 }
+// export function panierplusMoins(panierPoduits){
+//     const panier = document.getElementById('panier')
+//     const items = panier.querySelectorAll('li')
+    
+  
+  
+// }
+
+
+

@@ -1,16 +1,19 @@
 import {fetchingData } from "./api.js";
-import { data } from "./storage.js";
+// import { data } from "./storage.js";
 import { render } from "./products.js";
-// import {panier } from "./carts.js";
+import  { gereePanier} from "./carts.js";
+// import { panierplusMoins } from "./ui.js";
 
 
-// fetchingData()
-// export const filter = document.getElementById('search');
-render() 
-// afficherPanier()
+
+
+function app(){
+    render() 
+// x()
+
 fetchingData()
-// panier()
-// addPanier()
-// panierAfficher()
-// layoutGrid()
-// afficherProduitsPanier()
+
+gereePanier()
+// panierplusMoins()
+}
+document.addEventListener('DOMContentLoaded', app);
