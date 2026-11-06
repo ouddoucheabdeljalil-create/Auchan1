@@ -1,8 +1,8 @@
 
 
 
-export function afficherProduits(pageItems , produitE1){
-     for (let p of pageItems) {
+export function afficherProduits(pageItems, produitE1) {
+    for (let p of pageItems) {
 
         const articles = document.createElement('article');
         articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center '
@@ -45,25 +45,49 @@ export function layoutGrid(articles) {
     })
 }
 
-export function afficherPanier() {
+export function afficherPanier(id) {
     const datapro = JSON.parse(localStorage.getItem('panierPoduits')) || []
-    panier.innerHTML = ''
-    datapro.forEach(p => {
-        
-        const panierArticle = document.createElement('div')
-        panierArticle.innerHTML = `<li class="flex justify-around items-center text-amber-50 border border-amber-300 m-5">
-                <img src="${p.img}" alt="" class="h-40">
-                <button>-</button>
-                <p>0</p>
-                <button>+</button>
-                <p>TOTAL : <span>${p.prix}</span></p>
-                <button >supremer</button>
-            </li>`
-        panier.appendChild(panierArticle)
 
-    });
-    // console.log(datapro)
+    let produit = datapro.find(p => p.id === Number(id))
+    let item = panier.querySelector(`li[data-id='${id}']`);
+    if(!item){
+        item = document.createElement('li')
+        item.dataset.id = id
+        item.className = "flex justify-around bg-[#ffffff] items-center text-blue-900 border border-amber-300 m-5"
+        item.innerHTML =` <img src="${produit.img}" alt="" class="h-40">
+                <button data-id="${produit.id}" class="min border border-blue-900 h-10 w-10">-</button>
+                <p class="qntit${produit.id}">1</p>
+                <button data-id="${produit.id}" class="plus border border-blue-900 h-10 w-10">+</button>
+                <p><span class="total${produit.id}">${produit.prix} </span>DH</p>
+                <button >supremer</button>`
+        panier.appendChild(item)
+
+    }
+    else{
+        let quantity = item.querySelector(`.qntit${produit.id}`)
+        let count = Number(quantity.textContent)
+        count++
+        quantity.textContent = count
+        let total = item.querySelector(`.total${produit.id}`)
+        total.textContent = count * produit.prix
+        console.log(count ,'hhhhhhhhhhh')
+    }
+    panier.addEventListener('click' , (e) => {
+        let id = e.target.dataset.id;
+     let x = datapro.find(p => p.id == id)
+     let quantity = item.querySelector(`.qntit${produit.id}`)
+     let count = Number(quantity.textContent)
+     count++
+     quantity.textContent = count
+    })
 }
-function filterProduits(){
+// export function panierplusMoins(panierPoduits){
+//     const panier = document.getElementById('panier')
+//     const items = panier.querySelectorAll('li')
     
-}
+  
+  
+// }
+
+
+
