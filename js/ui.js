@@ -1,5 +1,4 @@
 
-// import { produitE1 } from "./products";
 
 
 export function afficherProduits(pageItems , produitE1){
@@ -46,6 +45,25 @@ export function layoutGrid(articles) {
     })
 }
 
+export function afficherPanier() {
+    const datapro = JSON.parse(localStorage.getItem('panierPoduits')) || []
+    panier.innerHTML = ''
+    datapro.forEach(p => {
+        
+        const panierArticle = document.createElement('div')
+        panierArticle.innerHTML = `<li class="flex justify-around items-center text-amber-50 border border-amber-300 m-5">
+                <img src="${p.img}" alt="" class="h-40">
+                <button>-</button>
+                <p>0</p>
+                <button>+</button>
+                <p>TOTAL : <span>${p.prix}</span></p>
+                <button >supremer</button>
+            </li>`
+        panier.appendChild(panierArticle)
+
+    });
+    // console.log(datapro)
+}
 function filterProduits(){
     
 }
