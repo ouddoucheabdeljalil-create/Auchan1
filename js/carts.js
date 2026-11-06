@@ -9,7 +9,7 @@ const panier = document.getElementById('panier')
 const panierBtn = document.getElementById('panier-btn')
 const produitE1 = document.querySelector('#catalogue');
 
-console.log(produitE1)
+
 panierBtn.addEventListener('click', (e) => {
     panier.classList.toggle('hidden')
 })
@@ -22,12 +22,19 @@ export function gereePanier() {
         if (e.target.classList.contains('ajouter-btn')) {
            
             let prodact = data.find(p => e.target.dataset.id == p.id)
-            
+            let exest = false;
+            for(let p of panierPoduits){
+                if(prodact.id == p.id){
+                    exest = true;
+                }
+            }
+            if(exest === false){
             panierPoduits.push(prodact)
-            console.log(e.target.dataset.id)
+            }
+            // console.log(e.target.dataset.id)
             panierData(panierPoduits)
             // localStorage.setItem('panierPoduits', JSON.stringify(panierPoduits))
-            afficherPanier()
+            afficherPanier(e.target.dataset.id)
         }
 
 
@@ -36,7 +43,7 @@ export function gereePanier() {
 
 
     })
-
+    // panierplusMoins(panierPoduits)
 }
 
 

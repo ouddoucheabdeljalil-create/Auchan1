@@ -57,7 +57,7 @@ export function afficherPanier(id) {
         item.innerHTML =` <img src="${produit.img}" alt="" class="h-40">
                 <button data-id="${produit.id}" class="min border border-blue-900 h-10 w-10">-</button>
                 <p class="qntit${produit.id}">1</p>
-                <button data-id="${produit.id}" class="plus border border-blue-900 h-10 w-10">+</button>
+                <button data-id="${produit.id}" id="plus${produit.id}" class="plus border border-blue-900 h-10 w-10">+</button>
                 <p><span class="total${produit.id}">${produit.prix} </span>DH</p>
                 <button >supremer</button>`
         panier.appendChild(item)
@@ -65,20 +65,33 @@ export function afficherPanier(id) {
     }
     else{
         let quantity = item.querySelector(`.qntit${produit.id}`)
-        let count = Number(quantity.textContent)
-        count++
-        quantity.textContent = count
+       
+        quantity.textContent = Number(quantity.textContent) + 1
         let total = item.querySelector(`.total${produit.id}`)
-        total.textContent = count * produit.prix
-        console.log(count ,'hhhhhhhhhhh')
+        total.textContent = Number(quantity.textContent)  * produit.prix
+        
+
     }
-    panier.addEventListener('click' , (e) => {
+    panierplusMoins()
+   
+} 
+export function panierplusMoins(panierPoduits){
+const item = panier.querySelector('li')
+item.addEventListener('click' , (e) => {
         let id = e.target.dataset.id;
-     let x = datapro.find(p => p.id == id)
-     let quantity = item.querySelector(`.qntit${produit.id}`)
-     let count = Number(quantity.textContent)
-     count++
-     quantity.textContent = count
+        console.log('nnn' , e.target.dataset.id)
+        let r = panier.querySelector('.plus');
+        console.log(e.target.id)
+    // if(e.target.id == `plus${e.target.dataset.id}` ){
+   
+     let quantity = item.querySelector(`.qntit${e.target.dataset.id}`)
+     
+   
+     quantity.textContent = Number(quantity.textContent) +1
+     console.log(quantity)
+     let total = item.querySelector(`.total${produit.id}`)
+        total.textContent = Number(quantity.textContent)  * produit.prix
+    // }
     })
 }
 // export function panierplusMoins(panierPoduits){
