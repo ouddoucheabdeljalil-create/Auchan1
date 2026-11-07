@@ -5,7 +5,7 @@ export function afficherProduits(pageItems, produitE1) {
     for (let p of pageItems) {
 
         const articles = document.createElement('article');
-        articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center '
+        articles.className = 'grid grid-cols-5 grid-rows-4 border-[#F8FBFD] text-[#102B50] shadow bg-[#ffffff] h-50 rounded-xl justify-center '
 
         articles.innerHTML = ` 
                     <img src="${p.img}" alt=""
@@ -19,7 +19,7 @@ export function afficherProduits(pageItems, produitE1) {
         imgBtn.className = 'ajouter-btn'
         articles.dataset.id = p.id;
         const ajouterBtn = document.createElement('button')
-        ajouterBtn.className = 'ajouter-btn bg-[#4338CA] p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]'
+        ajouterBtn.className = 'ajouter-btn bg-[#0D73e7]  p-1 rounded-xl flex col-start-4 col-span-3 row-start-4 w-[50%]  my-1 justify-center text-center text-[#ffffff]'
         layoutGrid(articles)
         ajouterBtn.dataset.id = p.id;
         imgBtn.dataset.id = p.id;
@@ -53,11 +53,11 @@ export function afficherPanier(id) {
     if(!item){
         item = document.createElement('li')
         item.dataset.id = id
-        item.className = "flex justify-around bg-[#ffffff] items-center text-blue-900 border border-amber-300 m-5"
+        item.className = "flex justify-around bg-[#ffffff] items-center text-[#102B50] border rounded-xl border-[#102B50] m-5"
         item.innerHTML =` <img src="${produit.img}" alt="" class="h-40">
-                <button data-id="${produit.id}" class="min border border-blue-900 h-10 w-10">-</button>
+                <button data-id="${produit.id}" id="min${produit.id}" class="min border border-[#102B50] h-10 w-10">-</button>
                 <p class="qntit${produit.id}">1</p>
-                <button data-id="${produit.id}" id="plus${produit.id}" class="plus border border-blue-900 h-10 w-10">+</button>
+                <button data-id="${produit.id}" id="plus${produit.id}" class="ajouter-btn border border-[#102B50]h-10 w-10">+</button>
                 <p><span class="total${produit.id}">${produit.prix} </span>DH</p>
                 <button >supremer</button>`
         panier.appendChild(item)
@@ -65,35 +65,87 @@ export function afficherPanier(id) {
     }
     else{
         let quantity = item.querySelector(`.qntit${produit.id}`)
-       
+        // const qtynbr = Number(quantity.textContent)
         quantity.textContent = Number(quantity.textContent) + 1
-        let total = item.querySelector(`.total${produit.id}`)
-        total.textContent = Number(quantity.textContent)  * produit.prix
         
+        let total = item.querySelector(`.total${produit.id}`)
+        total.textContent =  Number(quantity.textContent) * produit.prix
+        const finalTotal = document.getElementById('final-total')
+        
+        console.log(finalTotal)
+        finalTotal.textContent = total.textContent
 
     }
-    panierplusMoins()
+
+    // const btnPlus = panier.querySelector(`#plus${id}`)
+    // btnPlus.addEventListener('click' , (e) =>{
+    //     let quantity = item.querySelector(`.qntit${id}`)
+    //     quantity.textContent = Number(quantity.textContent)
+        
+    //     quantity.textContent = Number(quantity.textContent)+1 
+    // })
    
-} 
-export function panierplusMoins(panierPoduits){
-const item = panier.querySelector('li')
-item.addEventListener('click' , (e) => {
-        let id = e.target.dataset.id;
-        console.log('nnn' , e.target.dataset.id)
-        let r = panier.querySelector('.plus');
-        console.log(e.target.id)
-    // if(e.target.id == `plus${e.target.dataset.id}` ){
+   item.addEventListener('click' , (e) => {
+       
+       
+        
+    if(e.target.id == `plus${e.target.dataset.id}`){
+        console.log("e target: ", e.target.id, e.target.dataset.id)
+     let quantity = item.querySelector(`.qntit${e.target.dataset.id}`)
+     
+   
+     quantity.textContent = Number(quantity.textContent) + 1
+     console.log(quantity)
+     let total = item.querySelector(`.total${produit.id}`)
+    total.textContent = Number(quantity.textContent)  * produit.prix
+     const finalTotal = document.getElementById('final-total')
+        console.log(finalTotal)
+        finalTotal.textContent = Number(total.textContent)
+    }
+    else{
    
      let quantity = item.querySelector(`.qntit${e.target.dataset.id}`)
      
    
-     quantity.textContent = Number(quantity.textContent) +1
+     quantity.textContent = Number(quantity.textContent) - 1
      console.log(quantity)
      let total = item.querySelector(`.total${produit.id}`)
         total.textContent = Number(quantity.textContent)  * produit.prix
-    // }
+        const finalTotal = document.getElementById('final-total')
+        console.log(finalTotal)
+        finalTotal.textContent = Number(finalTotal.textContent) - Number(total.textContent)
+    }
     })
-}
+} 
+// export function panierplusMoins(total){
+// const item = panier.querySelector('li')
+// item.addEventListener('click' , (e) => {
+       
+       
+        
+//     if(e.target.id == `plus${e.target.dataset.id}` ){
+   
+//      let quantity = item.querySelector(`.qntit${e.target.dataset.id}`)
+     
+   
+//      quantity.textContent = Number(quantity.textContent) + 1
+//      console.log(quantity)
+//     //  let total = item.querySelector(`.total${produit.id}`)
+//     total.textContent = Number(quantity.textContent)  * produit.prix
+//     }
+//     else if(e.target.id == `min${e.target.dataset.id}` ){
+   
+//      let quantity = item.querySelector(`.qntit${e.target.dataset.id}`)
+     
+   
+//      quantity.textContent = Number(quantity.textContent) - 1
+//      console.log(quantity)
+//     //  let total = item.querySelector(`.total${produit.id}`)
+//         total.textContent = Number(quantity.textContent)  * produit.prix
+//     }
+//     })
+    
+// }
 // export function panierplusMoins(panierPoduits){
 //     const panier = document.getElementById('panier')
 //     const items = panier.querySelectorAll('li')
