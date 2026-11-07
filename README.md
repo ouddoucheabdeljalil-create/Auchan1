@@ -56,4 +56,5 @@ Générer des données de test avec l'API RandomUser.
 🔗 Liens du projet
 
 GitHub page:
-vercel :
+
+vercel : https://auchan-gules.vercel.app/
