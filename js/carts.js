@@ -8,12 +8,18 @@ import { afficherPanier } from "./ui.js";
 const panier = document.getElementById('panier')
 const panierBtn = document.getElementById('panier-btn')
 const produitE1 = document.querySelector('#catalogue');
+const divSpace = document.getElementById('space')
 
 
 panierBtn.addEventListener('click', (e) => {
     panier.classList.toggle('hidden')
+    divSpace.classList.toggle('hidden')
 })
 
+divSpace.addEventListener('click', () =>{
+    divSpace.classList.add('hidden')
+    panier.classList.add('hidden')
+})
 
 export function gereePanier() {
     const panierPoduits = JSON.parse(localStorage.getItem('panierPoduits')) || []

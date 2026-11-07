@@ -59,7 +59,7 @@ export function render() {
         btn.textContent = i;
         if (i === correntPage) {
             btn.disabled = true;
-            btn.classList.add('bg-[#4338CA]')
+            btn.classList.add('bg-[#0D73e7]')
         }
         btn.addEventListener('click', () => { correntPage = i; render(); });
         pagenation.appendChild(btn);
