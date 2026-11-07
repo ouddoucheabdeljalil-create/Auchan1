@@ -14,19 +14,19 @@
 
 </head>
 
-<body class="h-screen  bg-amber-600 font-inter text-2xl  ">
-   <header class=" flex flex-row  bg-[#F8FAFC] border border-[#E2E8F0] ">
-        <a href="index.html"><img src="assest/Logo Dodrar Market avec panier stylisé.png" alt=""
-                class="h-18 w-auto"></a>
+<body class="h-screen  bg-[#DEEEFB] font-inter  text-3xl  ">
+    <header class=" flex flex-row items-center  bg-[#F8FAFC] border border-[#E2E8F0] ">
+        <a href="index.html"><img src="assest/dodar.png" alt=""
+                class="h-15  w-auto lg:h-20 relative left-4"></a>
         <a href="admin.html"
-            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
+            class=" flex bg-[#0D73e7] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
                 src="assest/user.svg" alt=""></a>
         <button id="panier-btn"
-            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img
+            class=" flex bg-[#0D73e7] p-1  rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img
                 src="assest/panier.png" alt=""><button>
     </header>
     <main class="sm:flex flex-col justify-center gap-2  w-full h-full font-inter lg:grid-cols-6 grid-rows-4 relative">
-         
+
         <!-- <aside class="sm:  bg-amber-50 md:row-start-1  lg:col-start-1 row-span-4 ">
             <h2>dfghjklm</h2>
         </aside> -->
@@ -37,9 +37,10 @@
             </ul>
 
         </aside> -->
-        
-        <section class="h-full lg:col-span-5 row-start-1 row-span-5 ">
-            <div class="flex ">
+
+        <section class="h-full  lg:col-span-5 row-start-1 row-span-5 ">
+            <div class="flex flex-col gap-3 md:flex-row">
+                <div class="flex items-center gap-3 ">
                 <select name="" id="catalogue-select" class="bg-amber-300">
                     <option value="tout">Tout</option>
                     <option value="Bébé">Bébé</option>
@@ -55,30 +56,39 @@
                     <option value="6">6</option>
                     <option value="4">4</option>
                 </select>
-                <button id="grid-btn" class=""><img src="assest/layout-grid-line.svg" alt="" class="h-15"></button>
-                <button id="btn-horizontal"><img src="assest/layout-horizontal-line.svg" alt="" class="h-15"></button>
-                <input id="search" type="search"
-                    class=" border border-[#E2E8F0] bg-[#ffffff] rounded-xl h-9 col-span-2 pl-8 mt-3 w-[100%] "
-                    placeholder="  Recherche un prouduit">
+                <button id="grid-btn" class=""><img src="assest/layout-grid-line.svg" alt=""
+                        class="h-15 w-15 bg-[#0D73e7] rounded-xl"></button>
+                <button id="btn-horizontal"><img src="assest/layout-horizontal-line.svg" alt=""
+                        class="h-15 bg-[#0D73e7]"></button>
+                </div>
+                <div>
+                    <input id="search" type="search"
+                        class=" border border-[#E2E8F0] bg-[#ffffff] rounded-xl h-9 col-span-2 pl-8 mt-3 w-full "
+                        placeholder="  Recherche un prouduit">
+                </div>
             </div>
-            <div class="bg-taupe-700 h-40 w-[95%] ">
-
+            <div class="flex justify-center">
+                <img src="assest/auchan_banner_973x160_full.png" alt=""
+                    class="w-[90%] h-40 border border-none rounded-2xl m-10">
             </div>
             <div id="catalogue" class="grid gap-5  p-5 md:grid-cols-2 lg:grid-cols-4 ">
 
             </div>
             <div id="pagenation" class="flex justify-center mt-20 "></div>
         </section>
-        <ul id="panier" class="hidden overflow-auto bg-blue-900 h-[90%] w-[50%] absolute right-0 top-0">
-            <!-- <div class="flex justify-around items-center text-amber-50 border border-amber-300 m-5">
-                <img src="assest/atay soltan.png" alt="" class="h-40">
-                <button>-</button>
-                <p>0</p>
-                <button>+</button>
-                <p>TOTAL : <span>0</span></p>
-                <button >supremer</button>
-            </div> -->
+        <div id="space" class="hidden absolute bg-white/30 backdrop-blur-sm  h-full w-[50%]  left-0 top-0"></div>
+
+        <ul id="panier" class="hidden   lg:overflow-auto bg-[#B1D0EB] h-[90%] w-[50%] absolute right-0 top-0">
+
+            <div class="bg-amber-300 flex justify-around items-end h-10">
+                <p>TOTAL </p>
+                <p><span id="final-total">1 </span> DH</p>
+            </div>
+
         </ul>
+
+
+
 
     </main>
 
