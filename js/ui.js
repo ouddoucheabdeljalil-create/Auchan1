@@ -1,6 +1,5 @@
 
 
-
 export function afficherProduits(pageItems, produitE1) {
     for (let p of pageItems) {
 
@@ -28,6 +27,7 @@ export function afficherProduits(pageItems, produitE1) {
 
         produitE1.appendChild(articles)
     }
+  
 }
 
 export function layoutGrid(articles) {
@@ -41,7 +41,7 @@ export function layoutGrid(articles) {
     horizontalBtn.addEventListener('click', (e) => {
         e.preventDefault()
         articles.classList.remove()
-        articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center lg:col-span-4'
+        articles.className = 'grid grid-cols-5 grid-rows-4 border-[#E4EAF5] bg-[#ffffff] h-50 rounded-xl justify-center     col-span-4'
     })
 }
 

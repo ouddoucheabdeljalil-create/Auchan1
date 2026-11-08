@@ -26,11 +26,15 @@ pageNumber.addEventListener('click', (e) => {
     }
     render(itemsPerPage)
 })
-
-categorieSelect.addEventListener('click' , (e) =>{
-    
+export function filterByCategorie(){
+categorieSelect.addEventListener('change' , (e) =>{
+    let filterdCategory = data.filter(p => {
+        return categorieSelect.value === 'tout' || p.categorie === categorieSelect.value
+    })
+    console.log(filterdCategory)
+    render(filterdCategory)
 })
-
+}
 
 
 search.addEventListener('input', e => {
@@ -40,9 +44,9 @@ search.addEventListener('input', e => {
 });
 
 
-export function render() {
+export function render(fletercatego) {
 
-    const filtered = data.filter(p => p.name.toLowerCase().includes(currentFilter));
+    const filtered = fletercatego || data.filter(p => p.name.toLowerCase().includes(currentFilter));
     const start = (correntPage - 1) * itemsPerPage;
     const pageItems = filtered.slice(start, start + itemsPerPage);
     
