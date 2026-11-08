@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>auchan</title>
     <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="css/admin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +17,13 @@
 
 <body class="h-screen  bg-[#DEEEFB] font-inter  text-3xl  ">
     <header class=" flex flex-row items-center  bg-[#F8FAFC] border border-[#E2E8F0] ">
-        <a href="index.html"><img src="assest/dodar.png" alt=""
-                class="h-15  w-auto lg:h-20 relative left-4"></a>
+        <a href="index.html"><img src="assest/dodar.png" alt="" class="h-15  w-auto lg:h-20 relative left-4"></a>
         <a href="admin.html"
-            class=" flex bg-[#0D73e7] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
+            class=" flex bg-[#0D73e7] p-1 rounded-xl w-auto h-13 mr-45  my-1 justify-center absolute right-0 "><img
                 src="assest/user.svg" alt=""></a>
+        <a href="contact.html"
+            class=" flex bg-[#0D73e7] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
+                src="assest/contact_support_.svg" alt=""></a>
         <button id="panier-btn"
             class=" flex bg-[#0D73e7] p-1  rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img
                 src="assest/panier.png" alt=""><button>
@@ -41,25 +44,25 @@
         <section class="h-full  lg:col-span-5 row-start-1 row-span-5 ">
             <div class="flex flex-col gap-3 md:flex-row">
                 <div class="flex items-center gap-3 ">
-                <select name="" id="catalogue-select" class="bg-amber-300">
-                    <option value="tout">Tout</option>
-                    <option value="Bébé">Bébé</option>
-                    <option value="Boissons">Boissons</option>
-                    <option value="Produits laitiers">Produits laitiers</option>
-                    <option value="Alimentation">Alimentation</option>
-                    <option value="Confiserie">Confiserie</option>
-                    <option value="Entretien">Entretien</option>
-                    <option value="Hygiène">Hygiène</option>
-                </select>
-                <select id="itmes-per-page" name="" id="">
-                    <option value="8">8</option>
-                    <option value="6">6</option>
-                    <option value="4">4</option>
-                </select>
-                <button id="grid-btn" class=""><img src="assest/layout-grid-line.svg" alt=""
-                        class="h-15 w-15 bg-[#0D73e7] rounded-xl"></button>
-                <button id="btn-horizontal"><img src="assest/layout-horizontal-line.svg" alt=""
-                        class="h-15 bg-[#0D73e7]"></button>
+                    <select name="" id="catalogue-select" class="bg-amber-300">
+                        <option value="tout">Tout</option>
+                        <option value="Bébé">Bébé</option>
+                        <option value="Boissons">Boissons</option>
+                        <option value="Produits laitiers">Produits laitiers</option>
+                        <option value="Alimentation">Alimentation</option>
+                        <option value="Confiserie">Confiserie</option>
+                        <option value="Entretien">Entretien</option>
+                        <option value="Hygiène">Hygiène</option>
+                    </select>
+                    <select id="itmes-per-page" name="" id="">
+                        <option value="8">8</option>
+                        <option value="6">6</option>
+                        <option value="4">4</option>
+                    </select>
+                    <button id="grid-btn" class=""><img src="assest/layout-grid-line.svg" alt=""
+                            class="h-13 w-auto bg-[#0D73e7] rounded-xl"></button>
+                    <button id="btn-horizontal"><img src="assest/layout-horizontal-line.svg" alt=""
+                            class="h-13 bg-[#0D73e7]"></button>
                 </div>
                 <div>
                     <input id="search" type="search"

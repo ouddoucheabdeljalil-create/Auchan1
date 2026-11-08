@@ -1,4 +1,4 @@
-import { data , SetProduits } from "./storage.js";
+import { data, SetProduits } from "./storage.js";
 
 
 // let image = document.getElementById('imgProduit');
@@ -19,18 +19,18 @@ import { data , SetProduits } from "./storage.js";
 // });
 
 const tbody = document.querySelector('#tbody')
-function afficherProduitAdmin(){
-    for(let i = 0 ; i < data.length ; i++){
+function afficherProduitAdmin() {
+    for (let i = 0; i < data.length; i++) {
         const tableau = document.createElement('tr')
         tableau.className = 'text-center'
-        tableau.innerHTML = `<td >${i+1}</td>
+        tableau.innerHTML = `<td >${i + 1}</td>
                         <td class="flex justify-center"><img src="${data[i].img}" alt="" class="h-15"></td>
                         <td>${data[i].name}</td>
                         <td>${data[i].prix}</td>
                         <td>${data[i].categorie}</td>
-                        <td>
-                            <button class="bg-[#0D73e7]" h-12><img src="assest/stylus_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
-                            <button class="bg-red-500"><img src="assest/delete_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                        <td ">
+                            <button data-id="${data[i].id}" id="modifier${data[i].id}" class=" bg-[#0D73e7]  h-10  ">modifier</button>
+                            <button data-id="${data[i].id}" id="supreme${data[i].id}" class=" bg-red-500 h-10 ">supreme</button>
                         </td>`
         tbody.appendChild(tableau)
     }
@@ -43,29 +43,77 @@ const prixProduit = document.getElementById('prixProduit')
 const catalogue1 = document.getElementById('catalogue1')
 const btnAjouteNew = document.getElementById('btnAjouteNew')
 
-function ajouteProduit(){
+function ajouteProduit() {
     // const newData = JSON.parse(localStorage.getItem('produits')) || []
     btnAjouteNew.addEventListener('click', (e) => {
         e.preventDefault()
         const newProduit = {
-        id: data.length+1,
-        name : nameProduit.value ,
-        prix : prixProduit.value ,
-        categorie : catalogue1.value , 
-        img : imgProduit.value,
+            id: data.length + 1,
+            name: nameProduit.value,
+            prix: prixProduit.value,
+            categorie: catalogue1.value,
+            img: imgProduit.value,
 
-    }
-    data.push(newProduit)
-    //   localStorage.setItem('produits', JSON.stringify(newData))
-    SetProduits(data)
+        }
+        data.push(newProduit)
+        //   localStorage.setItem('produits', JSON.stringify(newData))
+        SetProduits(data)
     })
-   
-   
-    
-    
+
+
+
+
 }
 ajouteProduit()
 
-function deleteProduct(){
-    
+function deleteProduct() {
+
+    tbody.addEventListener('click', (e) => {
+        const supreme = document.querySelector(`#supreme${e.target.dataset.id}`)
+        if (e.target === supreme) {
+            let test = data.filter(p => p.id != e.target.dataset.id)
+            console.log(test)
+            SetProduits(test)
+        }
+    })
 }
+deleteProduct()
+const folmulaire = document.getElementById('folmulaire')
+const modName = document.getElementById('modifProduit')
+const modSelect = document.getElementById('Modcatalogue1')
+const modPrix = document.getElementById('modPrixProduit')
+const btnModifier = document.getElementById('btnAjouteNew')
+function modifierProduit() {
+    tbody.addEventListener('click', (e) => {
+        const modifier = document.querySelector(`#modifier${e.target.dataset.id}`)
+        if (e.target === modifier) {
+
+            folmulaire.classList.toggle("hidden")
+           
+           
+
+
+
+            // SetProduits(x)
+
+            folmulaire.addEventListener('submit', (e) => {
+                e.preventDefault()
+                 let x = data.forEach(element => {
+                if (element.id === Number(e.target.dataset.id)) {
+                    element.name = modName.value;
+                    element.categorie = modSelect.value;
+                    element.prix = modPrix.value;
+                    console.log(element)
+                }
+               
+            });
+            //  console.log(x)
+            console.log(modName.value)
+                folmulaire.classList.add("hidden")
+            })
+
+
+        }
+    })
+}
+modifierProduit()
