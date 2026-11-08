@@ -55,6 +55,6 @@ Formulaire avec validation Regex.
 Générer des données de test avec l'API RandomUser.
 🔗 Liens du projet
 
-GitHub page:
+GitHub page: https://ouddoucheabdeljalil-create.github.io/Auchan1/
 
 vercel : https://auchan-gules.vercel.app/
