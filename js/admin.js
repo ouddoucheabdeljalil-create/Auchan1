@@ -87,28 +87,30 @@ function modifierProduit() {
     tbody.addEventListener('click', (e) => {
         const modifier = document.querySelector(`#modifier${e.target.dataset.id}`)
         if (e.target === modifier) {
-
+            let id = e.target.dataset.id
             folmulaire.classList.toggle("hidden")
            
            
 
 
 
-            // SetProduits(x)
+            
 
             folmulaire.addEventListener('submit', (e) => {
                 e.preventDefault()
-                 let x = data.forEach(element => {
-                if (element.id === Number(e.target.dataset.id)) {
+                 data.forEach(element => {
+                if (element.id === Number(id)) {
+                    console.log(element , "dddd")
                     element.name = modName.value;
                     element.categorie = modSelect.value;
                     element.prix = modPrix.value;
-                    console.log(element)
+                    
                 }
                
             });
-            //  console.log(x)
+             console.log(data)
             console.log(modName.value)
+            SetProduits(data)
                 folmulaire.classList.add("hidden")
             })
 
