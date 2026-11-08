@@ -5,20 +5,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <title>admin</title>
 </head>
 
 <body>
-    <header class="sticky top-0 flex flex-row  bg-[#F8FAFC] border border-[#E2E8F0] ">
-        <a href="index.html"><img src="assest/dodar.png" alt=""
-                class="h-18 w-auto"></a>
+    <header class=" flex flex-row items-center  bg-[#F8FAFC] border border-[#E2E8F0] ">
+        <a href="index.html"><img src="assest/dodar.png" alt="" class="h-15  w-auto lg:h-20 relative left-4"></a>
+       
         <a href="admin.html"
-            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
+            class=" flex bg-[#0D73e7] p-1 rounded-xl w-auto h-13 mr-45  my-1 justify-center absolute right-0 "><img
                 src="assest/user.svg" alt=""></a>
-        <a  href="panier.html"
-            class=" flex bg-[#4338CA] p-1 rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img
-                src="assest/panier.png" alt=""><a>
+        <a href="contact.html"
+            class=" flex bg-[#0D73e7] p-1 rounded-xl w-auto h-13 mr-25  my-1 justify-center absolute right-0 "><img
+                src="assest/contact_support_.svg" alt=""></a>
+        <button id="panier-btn"
+            class=" flex bg-[#0D73e7] p-1  rounded-xl w-auto h-13 mr-6  my-1 justify-center absolute right-0 "><img
+                src="assest/panier.png" alt=""><button>
     </header>
+    <main class="font-['Inter']">
+        <section class="bg-[url('/assest/bg-ajoute.png')] bg-bottom-right w-full">
+            <div class="flex gap-3">
+                <img src="assest/add_shopping_cart.svg" alt="" class="h-12 bg-[#fff] ml-14">
+                <div>
+                    <h2 class="font-['Poppins'] text-3xl">Ajouter un produit</h2>
+                    <p class="text-xl">Remplissez les informations pour ajouter un nouveau produit</p>
+                </div>
+            </div>
+            <form action="" class="text-xl">
+                <div class="flex justify-around">
+                    <input id="imgProduit" type="file" accept="image/*" class="bg-amber-300 h-60">
+                    <div class="flex flex-col gap-7">
+                        <div class="flex gap-3">
+                            <img src="assest/shopping_cart_24dp_0D73E7_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                            <label for="">Nom du produit <span class="text-red-600">*</span></label>
+                        </div>
+                        <input type="text" id="nameProduit" class="bg-amber-200 h-15 w-auto rounded-2xl pl-5" placeholder="Ex: Atay Sultan">
+                    </div>
+                    <div class="flex flex-col gap-7">
+                        <div class="flex gap-3">
+                            <img src="assest/sell_24dp_0D73E7_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                            <label for="">Catégorie <span class="text-red-600">*</span></label>
+                        </div>
+                        <select name="" id="catalogue1" class="bg-amber-200 h-15 w-70 rounded-2xl  pl-5">
+
+                            <option value="Bébé">Bébé</option>
+                            <option value="Boissons">Boissons</option>
+                            <option value="Produits laitiers">Produits laitiers</option>
+                            <option value="Alimentation">Alimentation</option>
+                            <option value="Confiserie">Confiserie</option>
+                            <option value="Entretien">Entretien</option>
+                            <option value="Hygiène">Hygiène</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-7">
+                        <div class="flex gap-3">
+                            <img src="assest/money_bag_24dp_0D73E7_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                            <label for="">Prix(DH) <span class="text-red-600">*</span></label>
+                        </div>
+                        <input type="number" id="prixProduit" class="bg-amber-200 h-15 w-auto rounded-2xl  pl-5" placeholder="Ex: 25">
+                    </div>
+                </div>
+                <button id="btnAjouteNew" class="flex gap-2 w-80 ml-200 bg-[#0D73e7] items-center justify-center rounded-2xl border border-amber-50 mb-5"><img src="assest/add_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""
+                        class="h-12">Ajouter le Produit</button>
+            </form>
+        </section>
+        <section>
+            <img src="" alt="">
+            <h2 class="font-['Poppins'] text-3xl">List des produits</h2>
+            <table class="border" style="width:100%">
+                <thead>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Nom du produit</th>
+                    <th>Prix</th>
+                    <th>Catégorie</th>
+                    <th>action</th>
+                </thead>
+                <tbody id="tbody">
+                    <!-- <tr class="text-center ">
+                        <td >1</td>
+                        <td class="flex justify-center"><img src="assest/atay soltan.png" alt="" class="h-15"></td>
+                        <td>atay soltan</td>
+                        <td>15 dh</td>
+                        <td>Boissons</td>
+                        <td>
+                            <button class="bg-[#0D73e7]"><img src="assest/stylus_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                            <button class="bg-red-500"><img src="assest/delete_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                        </td>
+                    </tr>
+                    <tr class="text-center ">
+                        <td >1</td>
+                        <td class="flex justify-center"><img src="assest/atay soltan.png" alt="" class="h-15"></td>
+                        <td>atay soltan</td>
+                        <td>15 dh</td>
+                        <td>Boissons</td>
+                        <td>
+                            <button class="bg-[#0D73e7]"><img src="assest/stylus_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                            <button class="bg-red-500"><img src="assest/delete_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td >1</td>
+                        <td class="flex justify-center"><img src="assest/atay soltan.png" alt="" class="h-15"></td>
+                        <td>atay soltan</td>
+                        <td>15 dh</td>
+                        <td>Boissons</td>
+                        <td>
+                              <button class="bg-[#0D73e7]"><img src="assest/stylus_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                            <button class="bg-red-500"><img src="assest/delete_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div id="pagenation2" class="flex justify-center mt-20 "></div>
+
+        </section>
+    </main>
 </body>
+<script type="module" src="js/admin.js"></script>
 
 </html>
