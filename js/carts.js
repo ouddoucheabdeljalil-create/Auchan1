@@ -1,5 +1,5 @@
 // import { createElement } from "react"
-import { data , panierData  } from "./storage.js"
+import { getProduit , panierData  } from "./storage.js"
 import { afficherPanier } from "./ui.js";
 
 
@@ -22,6 +22,7 @@ divSpace.addEventListener('click', () =>{
 })
 
 export function gereePanier() {
+    let data = getProduit()
     const panierPoduits = JSON.parse(localStorage.getItem('panierPoduits')) || []
     produitE1.addEventListener('click', (e) => {
 
