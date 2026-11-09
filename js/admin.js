@@ -1,4 +1,4 @@
-import { data, SetProduits } from "./storage.js";
+import { getProduit, SetProduits } from "./storage.js";
 
 
 // let image = document.getElementById('imgProduit');
@@ -20,6 +20,8 @@ import { data, SetProduits } from "./storage.js";
 
 const tbody = document.querySelector('#tbody')
 function afficherProduitAdmin() {
+    let data = getProduit()
+    tbody.replaceChildren();
     for (let i = 0; i < data.length; i++) {
         const tableau = document.createElement('tr')
         tableau.className = 'text-center'
@@ -35,7 +37,7 @@ function afficherProduitAdmin() {
         tbody.appendChild(tableau)
     }
 }
-afficherProduitAdmin()
+// afficherProduitAdmin()
 
 const imgProduit = document.getElementById('imgProduit')
 const nameProduit = document.getElementById('nameProduit')
@@ -46,7 +48,7 @@ const btnAjouteNew = document.getElementById('btnAjouteNew')
 function ajouteProduit() {
     // const newData = JSON.parse(localStorage.getItem('produits')) || []
     btnAjouteNew.addEventListener('click', (e) => {
-        e.preventDefault()
+
         const newProduit = {
             id: data.length + 1,
             name: nameProduit.value,
@@ -61,61 +63,72 @@ function ajouteProduit() {
     })
 
 
-
-
 }
 ajouteProduit()
 
-function deleteProduct() {
+// function deleteProduct() {
 
-    tbody.addEventListener('click', (e) => {
-        const supreme = document.querySelector(`#supreme${e.target.dataset.id}`)
-        if (e.target === supreme) {
-            let test = data.filter(p => p.id != e.target.dataset.id)
-            console.log(test)
-            SetProduits(test)
-        }
-    })
-}
-deleteProduct()
+tbody.addEventListener('click', (e) => {
+    let data = getProduit()
+    const supreme = document.querySelector(`#supreme${e.target.dataset.id}`)
+    if (e.target === supreme) {
+        let test = data.filter(p => p.id != e.target.dataset.id)
+        console.log(test)
+        SetProduits(test)
+    }
+
+    // tbody.innerHTML = ''
+    afficherProduitAdmin()
+})
+
+// }
+// deleteProduct()
 const folmulaire = document.getElementById('folmulaire')
 const modName = document.getElementById('modifProduit')
 const modSelect = document.getElementById('Modcatalogue1')
 const modPrix = document.getElementById('modPrixProduit')
 const btnModifier = document.getElementById('btnAjouteNew')
-function modifierProduit() {
-    tbody.addEventListener('click', (e) => {
-        const modifier = document.querySelector(`#modifier${e.target.dataset.id}`)
-        if (e.target === modifier) {
-            let id = e.target.dataset.id
-            folmulaire.classList.toggle("hidden")
-           
-           
+
+let data = getProduit()
+tbody.addEventListener('click', (e) => {
+    const modifier = document.querySelector(`#modifier${e.target.dataset.id}`)
+    console.log(e.target, 'ttt')
+    console.log(modifier, 'eee')
+    if(modifier) {
+        console.log(e.target)
+        let id = e.target.dataset.id
+        folmulaire.classList.toggle("hidden")
+
+
+        console.log('rrr')
 
 
 
-            
 
-            folmulaire.addEventListener('submit', (e) => {
-                e.preventDefault()
-                 data.forEach(element => {
+        folmulaire.addEventListener('submit', (e) => {
+            e.preventDefault()
+            data.forEach(element => {
                 if (element.id === Number(id)) {
-                    console.log(element , "dddd")
+                    console.log(element, "dddd")
                     element.name = modName.value;
                     element.categorie = modSelect.value;
                     element.prix = modPrix.value;
-                    
+
                 }
-               
+
             });
-             console.log(data)
+            console.log(data)
             console.log(modName.value)
             SetProduits(data)
-                folmulaire.classList.add("hidden")
-            })
+            folmulaire.classList.add("hidden")
+            //  tbody.innerHTML = ''
+     afficherProduitAdmin()
+        })
+
+      
+    }
+    
+})
 
 
-        }
-    })
-}
-modifierProduit()
+afficherProduitAdmin()

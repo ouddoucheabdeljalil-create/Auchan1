@@ -1,11 +1,11 @@
-import { data } from "./storage.js";
+import { getProduit } from "./storage.js";
 import { afficherProduits } from "./ui.js";
 const pageNumber = document.getElementById('itmes-per-page')
 const produitE1 = document.querySelector('#catalogue');
 const pagenation = document.getElementById('pagenation');
 const search = document.getElementById('search');
 const categorieSelect = document.getElementById('catalogue-select')
-
+let data = getProduit();
 let itemsPerPage = 8;
 let correntPage = 1;
 let currentFilter = "";
@@ -13,6 +13,7 @@ let currentFilter = "";
 // number de produitd dans la page 
 
 pageNumber.addEventListener('click', (e) => {
+    
     itemsPerPage = Number(pageNumber.value)
     console.log(itemsPerPage)
     if (itemsPerPage === 8) {
