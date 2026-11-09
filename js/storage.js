@@ -4,7 +4,9 @@
 export function SetProduits(produits){
     localStorage.setItem('produits', JSON.stringify(produits))
 }
-export let data = JSON.parse(localStorage.getItem('produits')) || []
+export function getProduit(){
+   return  JSON.parse(localStorage.getItem('produits')) || []
+}
 
 
 
